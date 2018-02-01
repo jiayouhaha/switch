@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="shortcut icon" href="__IMG__/sitelogo.ico"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Resource-type" content="Document" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <!--<meta http-equiv="Cache" content="no-cache">-->
+    <meta http-equiv="Pragma" contect="no-cache">
+    <style type="text/css">
+    .weui_switch
+    {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        position: relative;
+        width: 52px;
+        height: 32px;
+        border: 1px solid #DFDFDF;
+        outline: 0;
+        border-radius: 16px;
+        box-sizing: border-box;
+        background: #DFDFDF;
+        -webkit-rtl-ordering: logical;
+        -webkit-user-select: text;
+        cursor: auto;
+        display: inline-block;
+        text-align: start;
+    }
+    .weui_switch:before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #FDFDFD;
+        -webkit-transition: -webkit-transform .3s;
+        transition: transform .3s;
+    }
+    .weui_switch:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 30px;
+        border-radius: 15px;
+        background-color: #FFFFFF;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        -webkit-transition: -webkit-transform .3s;
+        transition: transform .3s;
+    }
+    .weui_switch.checked {
+        border-color: #04BE02;
+        background-color: #04BE02;
+    }
+    .weui_switch.checked:before {
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    .weui_switch.checked:after {
+        -webkit-transform: translateX(20px);
+        transform: translateX(20px);
+    }
+    </style>
+</head>
+<body>
+    <input type='checkbox' class='weui_switch checked'>
+</body>
+<script type="application/javascript" src="zepto.min.js"></script>
+<script type="application/javascript">
+    $(function(){
+        $('.weui_switch').click(function(){
+//            $(this).toggleClass('checked');  //只用这句的话，只可以控制样式。很方便，但是不能进行其他操作
+
+
+            if($(this).hasClass('checked')){
+                $(this).removeClass('checked');
+                console.log('关闭');
+            }else{
+                $(this).addClass('checked');
+                console.log('打开');
+            }
+        });
+    });
+</script>
+</html>
